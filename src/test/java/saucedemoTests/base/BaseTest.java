@@ -1,15 +1,24 @@
 package saucedemoTests.base;
 
 import dataBase.WebsiteData;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.io.FileHandler;
+import org.testng.ITestResult;
 import org.testng.annotations.AfterClass;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import base.BasePage;
+import org.testng.annotations.BeforeMethod;
 import saucedemoPages.CartPage;
 import saucedemoPages.FirstCheckoutPage;
 import saucedemoPages.LoginPage;
 import saucedemoPages.ProductsPage;
+
+import java.io.File;
+import java.io.IOException;
 
 import static base.BasePage.delay;
 import static utilities.Utility.setUtilityDriver;
@@ -28,8 +37,12 @@ public class BaseTest {
     @BeforeClass
     public void setUp(){
         driver = new ChromeDriver();
-        driver.manage().window().maximize();;
+        driver.manage().window().maximize();
         driver.get(url);
+    }
+
+    @BeforeMethod
+    public void loadApplication(){
         basePage = new BasePage();
         basePage.setDriver(driver);
         setUtilityDriver();
@@ -39,7 +52,23 @@ public class BaseTest {
         productsPage = new ProductsPage();
         cartPage = new CartPage();
         firstCheckoutPage = new FirstCheckoutPage();
+    }
 
+    @AfterMethod
+    public void takeFailedResultsScreenshot(ITestResult testResult){
+        if (ITestResult.FAILURE == testResult.getStatus()){
+            TakesScreenshot screenshot = (TakesScreenshot) driver;
+            File source = screenshot.getScreenshotAs(OutputType.FILE);
+            File destination = new File(System.getProperty("user.dir") +
+                    "/resources/screenshots/(" + java.time.LocalDate.now() +
+                    testResult.getName() + ".png");
+            try {
+                FileHandler.copy(source,destination);
+            } catch (IOException e){
+                throw new RuntimeException(e);
+            }
+            System.out.println("Screenshot Located at: " + destination);
+        }
     }
 
     @AfterClass
