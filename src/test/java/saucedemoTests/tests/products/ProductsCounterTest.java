@@ -22,7 +22,7 @@ public class ProductsCounterTest extends BaseTest {
 
         System.out.println("Number Displayed:" + numberOfProductsRegistered);
 
-        assertEquals(expectedNumber, numberOfProductsRegistered);
+        assertEquals(numberOfProductsRegistered, expectedNumber);
 
     }
 }

@@ -12,20 +12,18 @@ import static utilities.JavaScriptsUtility.*;
 public class ProductsPage extends BasePage {
 
     private String productsId;
-    private boolean productStatus;
-    private String productsMainRoot;
-    private String[] addOrRemove = {"add-to-cart-", "remove-"};
-    private String[] productsNames = {"fleece-jacket", "backpack", "bolt-t-shirt"
+    private final String[] addOrRemove = {"add-to-cart-", "remove-"};
+    private final String[] productsNames = {"fleece-jacket", "backpack", "bolt-t-shirt"
             ,"bike-light", "onesie", "test.allthethings()-t-shirt-(red)"};
 
-    private By logOutButton = By.id("logout_sidebar_link");
-    private By menuListButton = By.id("react-burger-menu-btn");
-    private By productsHeader = By.xpath("//span[@class='title']");
-    private By carBadge = By.xpath("//span[@class='shopping_cart_badge']");
-    private By dropDown = By.xpath("//select[@class='product_sort_container']");
-    private By firstProductValue = By.xpath(
+    private final By logOutButton = By.id("logout_sidebar_link");
+    private final By menuListButton = By.id("react-burger-menu-btn");
+    private final By productsHeader = By.xpath("//span[@class='title']");
+    private final By carBadge = By.xpath("//span[@class='shopping_cart_badge']");
+    private final By dropDown = By.xpath("//select[@class='product_sort_container']");
+    private final By firstProductValue = By.xpath(
             "/html[1]/body[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]");
-    private By accessCartPage = By.xpath("//a[@class='shopping_cart_link']");
+    private final By accessCartPage = By.xpath("//a[@class='shopping_cart_link']");
 
     /**
      * Generates a list of four numbers simulating human interaction.
@@ -89,6 +87,9 @@ public class ProductsPage extends BasePage {
     }
 
     public String addOrRemoveItem(String selection, int customerPick){
+
+        String productsMainRoot;
+        boolean productStatus;
 
         if (customerPick == 5){
             productsMainRoot = "";   // Because of product's name Error.

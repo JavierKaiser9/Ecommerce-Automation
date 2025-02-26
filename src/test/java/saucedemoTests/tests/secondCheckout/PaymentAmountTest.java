@@ -7,7 +7,6 @@ import saucedemoPages.FirstCheckoutPage;
 import saucedemoPages.ProductsPage;
 import saucedemoPages.SecondCheckoutPage;
 import saucedemoTests.base.BaseTest;
-import saucedemoTests.tests.cart.CartTest;
 
 import static org.testng.Assert.assertEquals;
 

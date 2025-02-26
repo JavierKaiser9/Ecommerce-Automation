@@ -10,10 +10,10 @@ import java.util.regex.Pattern;
 
 public class SecondCheckoutPage extends BasePage {
 
-    private By cartList = By.xpath("//div[@class='cart_list']");
-    private By subTotal = By.xpath("//div[@class='summary_subtotal_label']");
-    private By purchaseTotal = By.xpath("//div[@class='summary_total_label']");
-    private By finishTransaction = By.id("finish");
+    private final By cartList = By.xpath("//div[@class='cart_list']");
+    private final By subTotal = By.xpath("//div[@class='summary_subtotal_label']");
+    private final By purchaseTotal = By.xpath("//div[@class='summary_total_label']");
+    private final By finishTransaction = By.id("finish");
 
 
     public String getProductsListInformation(){
