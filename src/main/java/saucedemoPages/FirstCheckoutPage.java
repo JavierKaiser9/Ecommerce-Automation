@@ -14,6 +14,7 @@ public class FirstCheckoutPage extends BasePage {
         set(firstName, customerName);
         set(lastName, customerLastName);
         set(postalCode, customerPostalCode);
+        click(continueToNextPage);
         return new SecondCheckoutPage();
     }
 

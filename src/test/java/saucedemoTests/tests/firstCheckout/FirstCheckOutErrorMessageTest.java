@@ -11,8 +11,6 @@ import static org.testng.Assert.assertTrue;
 
 public class FirstCheckOutErrorMessageTest extends BaseTest {
 
-    //UsersInfo usersInfo = usersInfo();
-
     @Test
     public void testFirstCheckoutErrorMessageNoName() {
 
