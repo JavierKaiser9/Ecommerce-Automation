@@ -2,6 +2,7 @@ package saucedemoPages;
 
 import base.BasePage;
 import org.openqa.selenium.By;
+import static utilities.JavaScriptsUtility.*;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
@@ -52,6 +53,7 @@ public class SecondCheckoutPage extends BasePage {
     }
 
     public CheckoutCompletedPage goToCompletedTransaction(){
+        scrollToElementJS(finishTransaction);
         click(finishTransaction);
         return new CheckoutCompletedPage();
     }

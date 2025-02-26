@@ -14,9 +14,9 @@ public class FirstCheckOutErrorMessageTest extends BaseTest {
     @Test
     public void testFirstCheckoutErrorMessageNoName() {
 
-        ProductsPage productsPage = loginPage.logIntoApplication(UsersInfo.correctPassword, UsersInfo.correctPassword);
-        productsPage.addOrRemoveItem("add", 2);
-        productsPage.addOrRemoveItem("add", 3);
+        ProductsPage productsPage = loginPage.logIntoApplication(UsersInfo.correctUser, UsersInfo.correctPassword);
+        productsPage.addOrRemoveItem("add", 0);
+        productsPage.addOrRemoveItem("add", 1);
         CartPage cartPage = productsPage.goToCartPage();
         FirstCheckoutPage firstCheckoutPage = cartPage.goToFirstCheckoutPage();
         firstCheckoutPage.setCustomerData("", UsersInfo.checkOutLastName, UsersInfo.postalCode);

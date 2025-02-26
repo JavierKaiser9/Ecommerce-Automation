@@ -20,6 +20,7 @@ public class CartPage extends BasePage {
     }
 
     public FirstCheckoutPage goToFirstCheckoutPage(){
+        scrollToElementJS(checkout);
         clickJS(checkout);
         return new  FirstCheckoutPage();
     }

@@ -27,7 +27,6 @@ public class ProductsPage extends BasePage {
 
     /**
      * Generates a list of four numbers simulating human interaction.
-     *
      * First, it picks three unique random numbers between 0 and 5.
      * Then, it selects one of them randomly and adds it as the fourth number.
      *
