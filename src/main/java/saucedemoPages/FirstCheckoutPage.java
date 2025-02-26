@@ -4,13 +4,13 @@ import base.BasePage;
 import org.openqa.selenium.By;
 
 public class FirstCheckoutPage extends BasePage {
-    private By firstName = By.id("first-name");
-    private By lastName = By.id("last-name");
-    private By postalCode = By.id("postal-code");
-    private By errorMessage = By.xpath("//h3[@data-test='error']");
-    private By continueToNextPage = By.id("continue");
+    private final By firstName = By.id("first-name");
+    private final By lastName = By.id("last-name");
+    private final By postalCode = By.id("postal-code");
+    private final By errorMessage = By.xpath("//h3[@data-test='error']");
+    private final By continueToNextPage = By.id("continue");
 
-    public SecondCheckoutPage clickContinueSecondCheckout(){
+    public SecondCheckoutPage goToSecondCheckout(){
         click(continueToNextPage);
         return new SecondCheckoutPage();
     }
@@ -19,7 +19,7 @@ public class FirstCheckoutPage extends BasePage {
         set(firstName, customerName);
         set(lastName, customerLastName);
         set(postalCode, customerPostalCode);
-        return clickContinueSecondCheckout();
+        return new SecondCheckoutPage();
     }
 
     public String getErrorMessageFirstCheckoutPage(){

@@ -24,11 +24,13 @@ public class BasePage {
         find(locator).click();
     }
 
-// --------- for tests ------------
+    /**
+     * Delay if needed for tester visualization
+     */
 
-    public static void delay(int miliseconds){
+    public static void delay(int milliseconds){
         try{
-            Thread.sleep(miliseconds);
+            Thread.sleep(milliseconds);
         } catch(InterruptedException exc){
             exc.printStackTrace();
         }

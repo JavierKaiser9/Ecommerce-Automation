@@ -1,5 +1,6 @@
 package saucedemoTests.tests.products;
 
+import dataBase.UsersInfo;
 import org.testng.annotations.Test;
 import saucedemoPages.ProductsPage;
 import saucedemoTests.base.BaseTest;
@@ -13,8 +14,7 @@ public class ProductsSelectionTest extends BaseTest {
         var customerPick = productsPage.generateNumbers(); // This method simulates 3 random picks and one removal.
         String[] validation = new String[4];
 
-        ProductsPage productsPage = loginPage.
-                logIntoApplication("standard_user", "secret_sauce");
+        ProductsPage productsPage = loginPage.logIntoApplication(UsersInfo.correctUser, UsersInfo.correctPassword);
 
         validation[0] = productsPage.addOrRemoveItem("add", customerPick.get(0));
         validation[1] = productsPage.addOrRemoveItem("add", customerPick.get(1));

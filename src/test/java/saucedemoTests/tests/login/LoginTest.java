@@ -13,8 +13,7 @@ public class LoginTest extends BaseTest {
     public void testLogin(){
 
         for(String userName: UsersInfo.registeredUsers){
-            ProductsPage productsPage = loginPage.
-                    logIntoApplication(userName, UsersInfo.correctPassword);
+            ProductsPage productsPage = loginPage.logIntoApplication(userName, UsersInfo.correctPassword);
             assertTrue(productsPage.isProductsHeaderDisplayed(), "\n It was not possible to login \n");
 
             System.out.println("User: " + userName + " , Login confirmed");

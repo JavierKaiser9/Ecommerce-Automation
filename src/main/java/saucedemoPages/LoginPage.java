@@ -33,9 +33,4 @@ public class LoginPage extends BasePage {
         return find(errorMessage).getText();
     }
 
-    public boolean isWebSideHeaderDisplayed(){
-        return find(swagLabLogo).isDisplayed();
-
-    }
-
 }

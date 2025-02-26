@@ -11,6 +11,7 @@ public class ErrorMessageTest extends BaseTest {
     public void testLoginErrorMessageCorrectUserWrongPassword() {
 
         loginPage.logIntoApplication(UsersInfo.correctUser, UsersInfo.wrongPassword);
+
         String errorMessage = loginPage.getErrorMessage();
         Assert.assertTrue(errorMessage.
                 contains("Epic sadface: Username and password do not match any user in this service"));

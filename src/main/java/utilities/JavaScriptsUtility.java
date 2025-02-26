@@ -2,6 +2,7 @@ package utilities;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 
@@ -26,4 +27,18 @@ public class JavaScriptsUtility extends Utility {
     public static void selectByVisibleText(By locator, String userSelection){
         findDropDown(locator).selectByVisibleText(userSelection);
     }
+
+    private static WebDriver.TargetLocator switchTo(){
+        return driver.switchTo();
+    }
+
+    public static String getAlertText(){
+        return switchTo().alert().getText();
+    }
+
+    public static void acceptAlert(){
+        switchTo().alert().accept();
+    }
+
+
 }

@@ -1,24 +1,26 @@
 package saucedemoTests.tests.firstCheckout;
 
-import dataBase.ProductsInfo;
 import dataBase.UsersInfo;
-import org.testng.Assert;
 import org.testng.annotations.Test;
-import saucedemoPages.SecondCheckoutPage;
+import saucedemoPages.CartPage;
+import saucedemoPages.FirstCheckoutPage;
+import saucedemoPages.ProductsPage;
 import saucedemoTests.base.BaseTest;
 
 import static org.testng.Assert.assertTrue;
 
 public class FirstCheckOutErrorMessageTest extends BaseTest {
 
+    //UsersInfo usersInfo = usersInfo();
+
     @Test
     public void testFirstCheckoutErrorMessageNoName() {
 
-        loginPage.logIntoApplication(UsersInfo.correctUser, UsersInfo.correctPassword);
+        ProductsPage productsPage = loginPage.logIntoApplication(UsersInfo.correctPassword, UsersInfo.correctPassword);
         productsPage.addOrRemoveItem("add", 2);
         productsPage.addOrRemoveItem("add", 3);
-        productsPage.goToCartPage();
-        cartPage.goToFirstCheckoutPage();
+        CartPage cartPage = productsPage.goToCartPage();
+        FirstCheckoutPage firstCheckoutPage = cartPage.goToFirstCheckoutPage();
         firstCheckoutPage.setCustomerData("", UsersInfo.checkOutLastName, UsersInfo.postalCode);
 
         String errorMessage = firstCheckoutPage.getErrorMessageFirstCheckoutPage();
@@ -28,11 +30,11 @@ public class FirstCheckOutErrorMessageTest extends BaseTest {
     @Test
     public void testFirstCheckoutErrorMessageNoLastName() {
 
-        loginPage.logIntoApplication(UsersInfo.correctUser, UsersInfo.correctPassword);
+        ProductsPage productsPage = loginPage.logIntoApplication(UsersInfo.correctUser, UsersInfo.correctPassword);
         productsPage.addOrRemoveItem("add", 2);
         productsPage.addOrRemoveItem("add", 4);
-        productsPage.goToCartPage();
-        cartPage.goToFirstCheckoutPage();
+        CartPage cartPage = productsPage.goToCartPage();
+        FirstCheckoutPage firstCheckoutPage = cartPage.goToFirstCheckoutPage();
         firstCheckoutPage.setCustomerData(UsersInfo.checkOutName, "", UsersInfo.postalCode);
 
         String errorMessage = firstCheckoutPage.getErrorMessageFirstCheckoutPage();
@@ -42,11 +44,11 @@ public class FirstCheckOutErrorMessageTest extends BaseTest {
     @Test
     public void testFirstCheckoutErrorMessageNoPostalCode() {
 
-        loginPage.logIntoApplication(UsersInfo.correctUser, UsersInfo.correctPassword);
+        ProductsPage productsPage = loginPage.logIntoApplication(UsersInfo.correctUser, UsersInfo.correctPassword);
         productsPage.addOrRemoveItem("add", 1);
         productsPage.addOrRemoveItem("add", 5);
-        productsPage.goToCartPage();
-        cartPage.goToFirstCheckoutPage();
+        CartPage cartPage = productsPage.goToCartPage();
+        FirstCheckoutPage firstCheckoutPage = cartPage.goToFirstCheckoutPage();
         firstCheckoutPage.setCustomerData(UsersInfo.checkOutName, UsersInfo.checkOutLastName, "");
 
         String errorMessage = firstCheckoutPage.getErrorMessageFirstCheckoutPage();

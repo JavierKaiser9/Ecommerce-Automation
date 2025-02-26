@@ -13,6 +13,7 @@ public class SecondCheckoutPage extends BasePage {
     private By cartList = By.xpath("//div[@class='cart_list']");
     private By subTotal = By.xpath("//div[@class='summary_subtotal_label']");
     private By purchaseTotal = By.xpath("//div[@class='summary_total_label']");
+    private By finishTransaction = By.id("finish");
 
 
     public String getProductsListInformation(){
@@ -45,9 +46,14 @@ public class SecondCheckoutPage extends BasePage {
         Matcher matcher = pattern.matcher(find(purchaseTotal).getText());
 
         if(matcher.find()){
-            return matcher.group(); // Extract only the numbers uf the String
+            return matcher.group();
         }
         return "No value detected";
+    }
+
+    public CheckoutCompletedPage goToCompletedTransaction(){
+        click(finishTransaction);
+        return new CheckoutCompletedPage();
     }
 
 }

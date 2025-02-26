@@ -2,6 +2,10 @@ package dataBase;
 
 public class UsersInfo extends WebsiteData {
 
+    /**
+     * Names and passwords for tests
+     */
+
     public static String[] registeredUsers = {"standard_user", "error_user", "problem_user"};
     public static String correctPassword = "secret_sauce";
     public static String correctUser = "standard_user";

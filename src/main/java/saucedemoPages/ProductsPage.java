@@ -2,9 +2,6 @@ package saucedemoPages;
 
 import base.BasePage;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.Select;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -24,10 +21,11 @@ public class ProductsPage extends BasePage {
     private By logOutButton = By.id("logout_sidebar_link");
     private By menuListButton = By.id("react-burger-menu-btn");
     private By productsHeader = By.xpath("//span[@class='title']");
-    private By carBadge = By.xpath("/html[1]/body[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/a[1]/span[1]");
-    private By dropDown = By.xpath("/html[1]/body[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/span[1]/select[1]");
-    private By firstProductValue = By.xpath("/html[1]/body[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]");
-    private By accessCartPage = By.xpath("/html[1]/body[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/a[1]");
+    private By carBadge = By.xpath("//span[@class='shopping_cart_badge']");
+    private By dropDown = By.xpath("//select[@class='product_sort_container']");
+    private By firstProductValue = By.xpath(
+            "/html[1]/body[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]");
+    private By accessCartPage = By.xpath("//a[@class='shopping_cart_link']");
 
     /**
      * Generates a list of four numbers simulating human interaction.
@@ -76,15 +74,18 @@ public class ProductsPage extends BasePage {
         selectByVisibleText(dropDown,userSelection);
     }
 
-    public LoginPage logOutApplication(){
+    public void logOutApplication(){
         click(menuListButton);
         clickJS(logOutButton);
-        return new LoginPage();
     }
 
     public CartPage goToCartPage(){
         clickJS(accessCartPage);
         return new CartPage();
+    }
+
+    public String getNumberOfItemsSelected(){
+        return find(carBadge).getText();
     }
 
     public String addOrRemoveItem(String selection, int customerPick){
@@ -120,6 +121,6 @@ public class ProductsPage extends BasePage {
             System.out.println("Incorrect Input");
         }
 
-        return productsId;  // Save selected products.
+        return productsId;  // Saves selected products.
     }
 }

@@ -2,22 +2,26 @@ package saucedemoTests.tests.secondCheckout;
 
 import dataBase.UsersInfo;
 import org.testng.annotations.Test;
+import saucedemoPages.CartPage;
+import saucedemoPages.FirstCheckoutPage;
+import saucedemoPages.ProductsPage;
+import saucedemoPages.SecondCheckoutPage;
 import saucedemoTests.base.BaseTest;
+import saucedemoTests.tests.cart.CartTest;
 
 import static org.testng.Assert.assertEquals;
-import static org.testng.Assert.assertTrue;
 
 public class PaymentAmountTest extends BaseTest {
 
     @Test
     public void checkAmountOfMoneyToBePaid() {
 
-        loginPage.logIntoApplication(UsersInfo.correctUser, UsersInfo.correctPassword);
+        ProductsPage productsPage = loginPage.logIntoApplication(UsersInfo.correctUser, UsersInfo.correctPassword);
         productsPage.addOrRemoveItem("add", 1);
         productsPage.addOrRemoveItem("add", 5);
-        productsPage.goToCartPage();
-        cartPage.goToFirstCheckoutPage();
-        firstCheckoutPage.setCustomerData(UsersInfo.checkOutName, UsersInfo.checkOutLastName, UsersInfo.postalCode);
+        CartPage cartPage = productsPage.goToCartPage();
+        FirstCheckoutPage firstCheckoutPage = cartPage.goToFirstCheckoutPage();
+        SecondCheckoutPage secondCheckoutPage = firstCheckoutPage.setCustomerData(UsersInfo.checkOutName, UsersInfo.checkOutLastName, UsersInfo.postalCode);
 
         var getProductsInformation = secondCheckoutPage.getProductsListInformation();
         String calculatedFinalPrice = secondCheckoutPage.calculateSubTotal(getProductsInformation);
