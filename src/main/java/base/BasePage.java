@@ -1,7 +1,10 @@
 package base;
+import io.opentelemetry.api.internal.Utils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import java.util.logging.Logger;
+
 
 public class BasePage {
 
@@ -32,7 +35,8 @@ public class BasePage {
         try{
             Thread.sleep(milliseconds);
         } catch(InterruptedException exc){
-            exc.printStackTrace();
+            Logger.getLogger(Utils.class.getName()).warning("Thread sleep interrupted" + exc.getMessage());
+            Thread.currentThread().interrupt();
         }
     }
 }
