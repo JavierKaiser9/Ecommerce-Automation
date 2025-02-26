@@ -12,10 +12,7 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import base.BasePage;
 import org.testng.annotations.BeforeMethod;
-import saucedemoPages.CartPage;
-import saucedemoPages.FirstCheckoutPage;
-import saucedemoPages.LoginPage;
-import saucedemoPages.ProductsPage;
+import saucedemoPages.*;
 
 import java.io.File;
 import java.io.IOException;
@@ -31,6 +28,8 @@ public class BaseTest {
     protected ProductsPage productsPage;
     protected CartPage cartPage;
     protected FirstCheckoutPage firstCheckoutPage;
+    protected SecondCheckoutPage secondCheckoutPage;
+    protected CheckoutCompletedPage checkoutCompletedPage;
     protected WebsiteData websiteData;
     private String url = "https://www.saucedemo.com/";
 
@@ -52,6 +51,8 @@ public class BaseTest {
         productsPage = new ProductsPage();
         cartPage = new CartPage();
         firstCheckoutPage = new FirstCheckoutPage();
+        secondCheckoutPage = new SecondCheckoutPage();
+        checkoutCompletedPage = new CheckoutCompletedPage();
     }
 
     @AfterMethod

@@ -10,12 +10,19 @@ public class FirstCheckoutPage extends BasePage {
     private By errorMessage = By.xpath("//h3[@data-test='error']");
     private By continueToNextPage = By.id("continue");
 
-    //public String firstNameInput = "Test Name";
-    //public String lastName = "Test Last Name";
-    //public
+    public SecondCheckoutPage clickContinueSecondCheckout(){
+        click(continueToNextPage);
+        return new SecondCheckoutPage();
+    }
 
+    public SecondCheckoutPage setCustomerData(String customerName, String customerLastName, String customerPostalCode){
+        set(firstName, customerName);
+        set(lastName, customerLastName);
+        set(postalCode, customerPostalCode);
+        return clickContinueSecondCheckout();
+    }
 
-
-
-
+    public String getErrorMessageFirstCheckoutPage(){
+        return find(errorMessage).getText();
+    }
 }

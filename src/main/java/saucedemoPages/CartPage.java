@@ -7,7 +7,7 @@ import java.util.Arrays;
 import static utilities.JavaScriptsUtility.*;
 
 public class CartPage extends BasePage {
-    // cart_contents_container
+
     private By cartList = By.id("cart_contents_container");
     private By checkout = By.id(("checkout"));
 
