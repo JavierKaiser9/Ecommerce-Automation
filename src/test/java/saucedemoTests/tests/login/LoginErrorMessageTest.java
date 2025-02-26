@@ -5,7 +5,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import saucedemoTests.base.BaseTest;
 
-public class ErrorMessageTest extends BaseTest {
+public class LoginErrorMessageTest extends BaseTest {
 
     @Test
     public void testLoginErrorMessageCorrectUserWrongPassword() {
