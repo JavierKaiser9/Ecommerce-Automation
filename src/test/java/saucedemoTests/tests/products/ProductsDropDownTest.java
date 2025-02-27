@@ -1,6 +1,5 @@
 package saucedemoTests.tests.products;
 
-import dataBase.UsersInfo;
 import org.testng.annotations.Test;
 import saucedemoPages.ProductsPage;
 import saucedemoTests.base.BaseTest;

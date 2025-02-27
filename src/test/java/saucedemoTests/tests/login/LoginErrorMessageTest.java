@@ -1,6 +1,5 @@
 package saucedemoTests.tests.login;
 
-import dataBase.UsersInfo;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import saucedemoTests.base.BaseTest;

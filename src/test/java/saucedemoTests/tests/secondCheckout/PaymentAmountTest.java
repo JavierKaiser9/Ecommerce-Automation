@@ -1,6 +1,5 @@
 package saucedemoTests.tests.secondCheckout;
 
-import dataBase.UsersInfo;
 import org.testng.annotations.Test;
 import saucedemoPages.CartPage;
 import saucedemoPages.FirstCheckoutPage;

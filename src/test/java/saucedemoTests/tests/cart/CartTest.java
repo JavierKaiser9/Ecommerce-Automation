@@ -1,7 +1,5 @@
 package saucedemoTests.tests.cart;
 
-import dataBase.ProductsInfo;
-import dataBase.UsersInfo;
 import org.testng.annotations.Test;
 import saucedemoPages.CartPage;
 import saucedemoPages.ProductsPage;

@@ -1,6 +1,5 @@
 package saucedemoTests.tests.checkoutCompleted;
 
-import dataBase.UsersInfo;
 import org.testng.annotations.Test;
 import saucedemoPages.*;
 import saucedemoTests.base.BaseTest;
