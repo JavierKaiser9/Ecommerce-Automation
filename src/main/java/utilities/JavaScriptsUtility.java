@@ -40,5 +40,4 @@ public class JavaScriptsUtility extends Utility {
         switchTo().alert().accept();
     }
 
-
 }

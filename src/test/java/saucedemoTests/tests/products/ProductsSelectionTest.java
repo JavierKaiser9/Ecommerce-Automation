@@ -11,10 +11,10 @@ public class ProductsSelectionTest extends BaseTest {
     @Test
     public void selectProduct(){
 
-        var customerPick = productsPage.generateNumbers(); // This method simulates 3 random picks and one removal.
         String[] validation = new String[4];
 
-        ProductsPage productsPage = loginPage.logIntoApplication(UsersInfo.correctUser, UsersInfo.correctPassword);
+        ProductsPage productsPage = loginPage.logIntoApplication(usersInfo.getCorrectUser(), usersInfo.getCorrectPassword());
+        var customerPick = productsPage.generateNumbers(); // This method simulates 3 random picks and one removal.
 
         validation[0] = productsPage.addOrRemoveItem("add", customerPick.get(0));
         validation[1] = productsPage.addOrRemoveItem("add", customerPick.get(1));

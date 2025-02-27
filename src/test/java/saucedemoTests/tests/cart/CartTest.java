@@ -12,9 +12,9 @@ public class CartTest extends BaseTest {
 
     @Test
     public void cartTest(){
-        String[] productsToCheck = {ProductsInfo.originalProductsNames[2],ProductsInfo.originalProductsNames[3]};
+        String[] productsToCheck = {productsInfo.getOriginalProductsNames()[2], productsInfo.getOriginalProductsNames()[3]};
 
-        ProductsPage productsPage = loginPage.logIntoApplication(UsersInfo.correctUser, UsersInfo.correctPassword);
+        ProductsPage productsPage = loginPage.logIntoApplication(usersInfo.getCorrectUser(), usersInfo.getCorrectPassword());
         productsPage.addOrRemoveItem("add", 2);
         productsPage.addOrRemoveItem("add", 3);
         CartPage cartPage = productsPage.goToCartPage();

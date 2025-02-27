@@ -12,7 +12,7 @@ public class ProductsCounterTest extends BaseTest {
     @Test
     public void productsCounterTest(){
 
-        ProductsPage productsPage = loginPage.logIntoApplication(UsersInfo.correctUser, UsersInfo.correctPassword);
+        ProductsPage productsPage = loginPage.logIntoApplication(usersInfo.getCorrectUser(), usersInfo.getCorrectPassword());
         productsPage.addOrRemoveItem("add", 1);
         productsPage.addOrRemoveItem("add", 3);
         productsPage.addOrRemoveItem("add", 5);

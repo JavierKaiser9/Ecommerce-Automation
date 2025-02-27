@@ -12,12 +12,13 @@ public class LoginTest extends BaseTest {
     @Test
     public void testLogin(){
 
-        for(String userName: UsersInfo.registeredUsers){
-            ProductsPage productsPage = loginPage.logIntoApplication(userName, UsersInfo.correctPassword);
+        for(String userName: usersInfo.getRegisteredUsers()){
+            ProductsPage productsPage = loginPage.logIntoApplication(userName, usersInfo.getCorrectPassword());
             assertTrue(productsPage.isProductsHeaderDisplayed(), "\n It was not possible to login \n");
 
             System.out.println("User: " + userName + " , Login confirmed");
             productsPage.logOutApplication();
+            usersInfo.getRegisteredUsers();
         }
     }
 }

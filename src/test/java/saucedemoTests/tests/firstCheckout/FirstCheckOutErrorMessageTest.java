@@ -14,12 +14,12 @@ public class FirstCheckOutErrorMessageTest extends BaseTest {
     @Test
     public void testFirstCheckoutErrorMessageNoName() {
 
-        ProductsPage productsPage = loginPage.logIntoApplication(UsersInfo.correctUser, UsersInfo.correctPassword);
+        ProductsPage productsPage = loginPage.logIntoApplication(usersInfo.getCorrectUser(), usersInfo.getCorrectPassword());
         productsPage.addOrRemoveItem("add", 0);
         productsPage.addOrRemoveItem("add", 1);
         CartPage cartPage = productsPage.goToCartPage();
         FirstCheckoutPage firstCheckoutPage = cartPage.goToFirstCheckoutPage();
-        firstCheckoutPage.setCustomerData("", UsersInfo.checkOutLastName, UsersInfo.postalCode);
+        firstCheckoutPage.setCustomerData("", usersInfo.getCheckOutLastName(), usersInfo.getPostalCode());
 
         String errorMessage = firstCheckoutPage.getErrorMessageFirstCheckoutPage();
         assertTrue(errorMessage.contains("Error: First Name is required"));
@@ -28,12 +28,12 @@ public class FirstCheckOutErrorMessageTest extends BaseTest {
     @Test
     public void testFirstCheckoutErrorMessageNoLastName() {
 
-        ProductsPage productsPage = loginPage.logIntoApplication(UsersInfo.correctUser, UsersInfo.correctPassword);
+        ProductsPage productsPage = loginPage.logIntoApplication(usersInfo.getCorrectUser(), usersInfo.getCorrectPassword());
         productsPage.addOrRemoveItem("add", 2);
         productsPage.addOrRemoveItem("add", 4);
         CartPage cartPage = productsPage.goToCartPage();
         FirstCheckoutPage firstCheckoutPage = cartPage.goToFirstCheckoutPage();
-        firstCheckoutPage.setCustomerData(UsersInfo.checkOutName, "", UsersInfo.postalCode);
+        firstCheckoutPage.setCustomerData(usersInfo.getCheckOutName(), "", usersInfo.getPostalCode());
 
         String errorMessage = firstCheckoutPage.getErrorMessageFirstCheckoutPage();
         assertTrue(errorMessage.contains("Error: Last Name is required"));
@@ -42,12 +42,12 @@ public class FirstCheckOutErrorMessageTest extends BaseTest {
     @Test
     public void testFirstCheckoutErrorMessageNoPostalCode() {
 
-        ProductsPage productsPage = loginPage.logIntoApplication(UsersInfo.correctUser, UsersInfo.correctPassword);
+        ProductsPage productsPage = loginPage.logIntoApplication(usersInfo.getCorrectUser(), usersInfo.getCorrectPassword());
         productsPage.addOrRemoveItem("add", 1);
         productsPage.addOrRemoveItem("add", 5);
         CartPage cartPage = productsPage.goToCartPage();
         FirstCheckoutPage firstCheckoutPage = cartPage.goToFirstCheckoutPage();
-        firstCheckoutPage.setCustomerData(UsersInfo.checkOutName, UsersInfo.checkOutLastName, "");
+        firstCheckoutPage.setCustomerData(usersInfo.getCheckOutName(), usersInfo.getCheckOutLastName() , "");
 
         String errorMessage = firstCheckoutPage.getErrorMessageFirstCheckoutPage();
         assertTrue(errorMessage.contains("Error: Postal Code is required"));

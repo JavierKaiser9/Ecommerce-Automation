@@ -16,8 +16,8 @@ public class ProductsAlertTest extends BaseTest {
 
         String expectedAlertText = "Sorting is broken! This error has been reported to Backtrace.";
 
-        ProductsPage productsPage = loginPage.logIntoApplication(UsersInfo.registeredUsers[1],
-                UsersInfo.correctPassword);
+        ProductsPage productsPage = loginPage.logIntoApplication(usersInfo.getRegisteredUsers()[1],
+                usersInfo.getCorrectPassword());
         productsPage.selectFromDropDown("Price (high to low)");
         assertEquals(getAlertText(), expectedAlertText,
                 "No Text Founded");

@@ -1,6 +1,7 @@
 package saucedemoTests.base;
 
-import dataBase.WebsiteData;
+import dataBase.ProductsInfo;
+import dataBase.UsersInfo;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
@@ -25,12 +26,8 @@ public class BaseTest {
     protected WebDriver driver;
     protected BasePage basePage;
     protected LoginPage loginPage;
-    protected ProductsPage productsPage;
-    protected CartPage cartPage;
-    protected FirstCheckoutPage firstCheckoutPage;
-    protected SecondCheckoutPage secondCheckoutPage;
-    protected CheckoutCompletedPage checkoutCompletedPage;
-    protected WebsiteData websiteData;
+    protected UsersInfo usersInfo;
+    protected ProductsInfo productsInfo;
     private String url = "https://www.saucedemo.com/";
 
     @BeforeClass
@@ -47,12 +44,8 @@ public class BaseTest {
         setUtilityDriver();
 
         loginPage = new LoginPage();
-        websiteData = new WebsiteData();
-        productsPage = new ProductsPage();
-        cartPage = new CartPage();
-        firstCheckoutPage = new FirstCheckoutPage();
-        secondCheckoutPage = new SecondCheckoutPage();
-        checkoutCompletedPage = new CheckoutCompletedPage();
+        usersInfo = new UsersInfo();
+        productsInfo = new ProductsInfo();
     }
 
     @AfterMethod

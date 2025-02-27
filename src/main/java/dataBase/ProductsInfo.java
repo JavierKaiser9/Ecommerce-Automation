@@ -3,10 +3,18 @@ package dataBase;
 public class ProductsInfo extends WebsiteData{
 
     /**
-     * All Products in the website.
+     * All Products in Ecommerce website.
      */
 
-    public static String[] originalProductsNames = {"Sauce Labs Fleece Jacket", "Sauce Labs Backpack",
-            "Sauce Labs Bolt T-Shirt","Sauce Labs Bike Light",
-            "Sauce Labs Onesie", "Test.allTheThings() T-Shirt (Red)"};
+    private final String[] originalProductsNames;
+
+    public ProductsInfo(){
+        this.originalProductsNames = new String[]{"Sauce Labs Fleece Jacket", "Sauce Labs Backpack",
+                "Sauce Labs Bolt T-Shirt","Sauce Labs Bike Light",
+                "Sauce Labs Onesie", "Test.allTheThings() T-Shirt (Red)"};
+    }
+
+    public String[] getOriginalProductsNames(){
+        return originalProductsNames;
+    }
 }
