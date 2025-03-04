@@ -2,7 +2,7 @@
 Welcome to SauceDemo E-Commerce Automation! 
 This open-source project provides a robust automation framework for testing the SauceDemo e-commerce site using Java, Selenium WebDriver, and TestNG.
 
-<img src="https://github.com/JavierKaiser9/Ecommerce-Automation/blob/master/Eco_Automation.png" width="700" alt="Realsense 415-D" title="RGB-D Realsense 415-D camera" />
+<img src="https://github.com/JavierKaiser9/Ecommerce-Automation/blob/master/Eco_Automation.png" width="700" alt="E-Commerce Automation" title="E-Commerce Automation" />
 
 ## 🔹 Features
 * ✅ **End-to-end test automation for SauceDemo.** 
