@@ -4,9 +4,9 @@ This open-source project provides a robust automation framework for testing the 
 
 ## 🔹 Features
 * ✅ **End-to-end test automation for SauceDemo.** 
-* ✅ **Page Object Model (POM) for scalability and maintainability.** 
-* ✅ **Detailed test cases and scenarios.**
-* ✅ **Detailed test reports** 
+* ✅ **Page Object Model (POM) for scalability and maintainability.**
+* ✅ **Showcase interactions with web elements like dropdowns and alarms**
+* ✅ **Detailed test cases and scenarios.** 
 
 ## 🎯 Purpose of the project
 This project serves as a learning resource and a template for QA engineers and developers looking to automate e-commerce applications efficiently. 
